@@ -845,9 +845,9 @@ body {
 @media (max-width: 768px) {
     .desktop-icons {
         flex-direction: row !important;
-        top: calc(20px * var(--window-scale, 1)) !important;
-        left: calc(20px * var(--window-scale, 1)) !important;
-        gap: calc(20px * var(--window-scale, 1)) !important;
+        top: calc(10px * var(--window-scale, 1)) !important;
+        left: calc(10px * var(--window-scale, 1)) !important;
+        gap: calc(8px * var(--window-scale, 1)) !important;
         flex-wrap: wrap !important;
     }
 }
@@ -874,9 +874,9 @@ body {
 
 /* Mobile desktop icon size */
 @media (max-width: 768px) {
-    .desktop-icon {
-        padding: calc(12px * var(--window-scale, 1)) !important;
-        gap: calc(12px * var(--window-scale, 1)) !important;
+    .desktop .desktop-icons .desktop-icon {
+        padding: calc(14px * var(--window-scale, 1)) !important;
+        gap: calc(14px * var(--window-scale, 1)) !important;
     }
 }
 
@@ -897,10 +897,10 @@ body {
 
 /* Mobile icon image size */
 @media (max-width: 768px) {
-    .icon-image {
-        width: calc(108px * var(--window-scale, 1)) !important;
-        height: calc(108px * var(--window-scale, 1)) !important;
-        font-size: calc(84px * var(--window-scale, 1)) !important;
+    .desktop .desktop-icons .desktop-icon .icon-image {
+        width: calc(115px * var(--window-scale, 1)) !important;
+        height: calc(115px * var(--window-scale, 1)) !important;
+        font-size: calc(86px * var(--window-scale, 1)) !important;
     }
 }
 
@@ -915,9 +915,9 @@ body {
 
 /* Mobile icon text size */
 @media (max-width: 768px) {
-    .icon-text {
-        font-size: calc(24px * var(--window-scale, 1)) !important;
-        max-width: calc(180px * var(--window-scale, 1)) !important;
+    .desktop .desktop-icons .desktop-icon .icon-text {
+        font-size: calc(22px * var(--window-scale, 1)) !important;
+        max-width: calc(132px * var(--window-scale, 1)) !important;
     }
 }
 
