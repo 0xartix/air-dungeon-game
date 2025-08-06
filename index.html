@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Windows 2000s Retro UI</title>
+    <link rel="stylesheet" href="styles.css">
+    
+
+</head>
+<body>
+    <!-- Windows Desktop Background -->
+    <div class="desktop">
+        <!-- Taskbar -->
+        <div class="taskbar">
+            <div class="start-button">
+                <div class="start-icon">⊞</div>
+                <span>Start</span>
+            </div>
+            <div class="taskbar-items" id="taskbarItems">
+                <!-- Taskbar items will be dynamically added here -->
+            </div>
+            <div class="system-tray">
+                <div class="tray-item" data-action="clock">🕐</div>
+                <div class="tray-item" data-action="volume">🔊</div>
+                <div class="tray-item" data-action="wifi">📶</div>
+            </div>
+        </div>
+        
+        <!-- Main Window -->
+        <div class="window" id="gameWindow" style="display: none;">
+            <!-- Window Title Bar -->
+            <div class="title-bar">
+                            <div class="title-bar-left">
+                <div class="window-icon">🎮</div>
+                <span class="window-title">AIR Dungeon Crawler</span>
+            </div>
+                <div class="title-bar-right">
+                    <div class="window-button minimize">─</div>
+                    <div class="window-button maximize">□</div>
+                    <div class="window-button close">✕</div>
+                </div>
+            </div>
+            
+            <!-- Window Menu Bar -->
+            <div class="menu-bar">
+                <div class="menu-item">File</div>
+                <div class="menu-item">Edit</div>
+                <div class="menu-item">View</div>
+                <div class="menu-item">Help</div>
+            </div>
+            
+            <!-- Window Content -->
+            <div class="window-content">
+                <!-- Start Screen Video -->
+                <div class="start-screen-container">
+                                            <video id="startVideo" class="start-screen-video" muted playsinline webkit-playsinline preload="auto">
+                            <source src="start_video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    
+                    <!-- Play Button -->
+                    <div class="play-button-container">
+                        <img src="play button.png" alt="Play Button" class="play-button-image" id="playButton">
+                    </div>
+                    
+
+                </div>
+            </div>
+            
+            <!-- Window Status Bar -->
+            <div class="status-bar">
+                <div class="status-item">Ready</div>
+                <div class="status-item">AIR Price: $0.00850</div>
+                <div class="status-item">Players Online: 1</div>
+            </div>
+        </div>
+        
+        <!-- X Window -->
+        <div class="window" id="xWindow" style="display: none;">
+            <!-- Window Title Bar -->
+            <div class="title-bar">
+                <div class="title-bar-left">
+                    <div class="window-icon">𝕏</div>
+                    <span class="window-title">X (Twitter)</span>
+                </div>
+                <div class="title-bar-right">
+                    <div class="window-button minimize">─</div>
+                    <div class="window-button maximize">□</div>
+                    <div class="window-button close">✕</div>
+                </div>
+            </div>
+            
+            <!-- Window Menu Bar -->
+            <div class="menu-bar">
+                <div class="menu-item">File</div>
+                <div class="menu-item">Edit</div>
+                <div class="menu-item">View</div>
+                <div class="menu-item">Help</div>
+            </div>
+            
+            <!-- Window Content -->
+            <div class="window-content">
+                <div class="x-container">
+                    <img src="x profile.png" alt="X Profile" class="x-profile-image">
+                </div>
+            </div>
+            
+            <!-- Window Status Bar -->
+            <div class="status-bar">
+                <div class="status-item">Connected</div>
+                <div class="status-item">Last updated: 2 minutes ago</div>
+                <div class="status-item">Online</div>
+            </div>
+        </div>
+        
+        <!-- Metin2 Window -->
+        <div class="window" id="metin2Window" style="display: none;">
+            <!-- Window Title Bar -->
+            <div class="title-bar">
+                <div class="title-bar-left">
+                    <div class="window-icon">🎮</div>
+                    <span class="window-title">Metin2</span>
+                </div>
+                <div class="title-bar-right">
+                    <div class="window-button minimize">─</div>
+                    <div class="window-button maximize">□</div>
+                    <div class="window-button close">✕</div>
+                </div>
+            </div>
+            
+            <!-- Window Menu Bar -->
+            <div class="menu-bar">
+                <div class="menu-item">File</div>
+                <div class="menu-item">Edit</div>
+                <div class="menu-item">View</div>
+                <div class="menu-item">Help</div>
+            </div>
+            
+            <!-- Window Content -->
+            <div class="window-content">
+                <!-- Music Controls -->
+                <div class="metin2-music-controls">
+                    <div class="music-player-container">
+                        <!-- Song Info with Controls -->
+                        <div class="song-info">
+                            <div class="song-title">Enter The East</div>
+                            <div class="song-artist">Metin2 OST</div>
+                            <div class="song-controls">
+                                <button class="simple-btn" id="playBtn">
+                                    <img src="play button final.png" alt="Play" class="control-icon">
+                                </button>
+                                <button class="simple-btn" id="pauseBtn">
+                                    <img src="pause.png" alt="Pause" class="control-icon">
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Progress Bar -->
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                                <div class="progress-waveform"></div>
+                            </div>
+                            <div class="time-display">
+                                <span class="current-time">0:00</span>
+                                <span class="total-time">0:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Banner Image -->
+                <div class="metin2-container">
+                    <img src="metin2banner.jpeg" alt="Metin2 Banner" style="width: 100%; height: auto; max-width: 800px;">
+                </div>
+                
+                <!-- Hidden Audio Element -->
+                <audio id="metin2Audio" preload="auto">
+                    <source src="metin 2 soundtrack-enter the east.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            
+            <!-- Window Status Bar -->
+            <div class="status-bar">
+                <div class="status-item">Ready</div>
+                <div class="status-item">Metin2 Banner</div>
+                <div class="status-item">Online</div>
+            </div>
+        </div>
+        
+        <!-- Desktop Icons -->
+        <div class="desktop-icons">
+            <div class="desktop-icon">
+                <div class="icon-image">🎮</div>
+                <div class="icon-text">AIR Dungeon</div>
+            </div>
+            <div class="desktop-icon" data-url="https://twitter.com/intent/follow?screen_name=0xArtix">
+                <div class="icon-image">𝕏</div>
+                <div class="icon-text">X</div>
+            </div>
+            <div class="desktop-icon" data-error="No Wi-Fi Connection">
+                <div class="icon-image">🌐</div>
+                <div class="icon-text">Internet Explorer</div>
+            </div>
+            <div class="desktop-icon">
+                <div class="icon-image">
+                    <img src="metin2.png" alt="Metin2" style="width: 48px; height: 48px; object-fit: contain;">
+                </div>
+                <div class="icon-text">Metin2</div>
+            </div>
+        </div>
+        
+        <!-- Development Buttons on Desktop -->
+        <div class="dev-button-container">
+            <button class="dev-button" id="devScene1Button" data-scene="scene1">S1</button>
+            <button class="dev-button" id="devScene2Button" data-scene="scene2">S2</button>
+            <button class="dev-button" id="devScene3Button" data-scene="scene3">S3</button>
+            <button class="dev-button" id="devScene4Button" data-scene="scene4">S4</button>
+            <button class="dev-button" id="devScene4_1Button" data-scene="scene4_1">S4_1</button>
+            <button class="dev-button" id="devScene5Button" data-scene="scene5">S5</button>
+            <button class="dev-button" id="devScene6Button" data-scene="scene6">S6</button>
+            <button class="dev-button" id="devScene7Button" data-scene="scene7">S7</button>
+            <button class="dev-button" id="devScene8Button" data-scene="scene8">S8</button>
+            <button class="dev-button" id="devScene9Button" data-scene="scene9">S9</button>
+            <button class="dev-button" id="devScene9_1Button" data-scene="scene9_1">S9_1</button>
+            <button class="dev-button" id="devScene10Button" data-scene="scene10">S10</button>
+            <button class="dev-button" id="devScene11Button" data-scene="scene11">S11</button>
+            <button class="dev-button" id="devTrueSceneButton" data-scene="truescene">TRUE</button>
+            <button class="dev-button" id="devFalseSceneButton" data-scene="falsescene">FALSE</button>
+            <button class="dev-button" id="devScene12Button" data-scene="scene12">S12</button>
+            <button class="dev-button" id="devExitSceneButton" data-scene="exitscene">EXIT</button>
+            <button class="dev-button" id="devSuccessfullyButton" data-scene="win">WIN</button>
+            <button class="dev-button" id="devGameOverButton" data-scene="gameOver">OVER</button>
+            <button class="dev-button" id="testRetroDialog">TEST</button>
+        </div>
+        
+        <!-- Retro Dialog Box Test -->
+        <div class="retro-dialog" id="retroDialog" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2000;">
+            <div class="dialog-question">What will you do?</div>
+            <div class="dialog-buttons">
+                <button class="retro-button" id="retroGoForward">Go Forward</button>
+                <button class="retro-button" id="retroGoBack">Go Back</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Game Background Music -->
+    <audio id="gameMusic" loop preload="auto">
+        <source src="game_music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="dev-helper.js"></script>
+    <script type="module" src="script.js"></script>
+    
+    <!-- Prevent browser close warning and reload prompts -->
+
+</body>
+</html> 
