@@ -189,10 +189,7 @@ body {
         overflow: visible !important; /* Allow dialog to extend beyond window borders */
     }
     
-    /* Hide dev panel on mobile */
-    .dev-button-container {
-        display: none !important;
-    }
+
     
     /* Make window content fit 80% window */
     .window-content {
@@ -813,70 +810,7 @@ body {
     transform: scale(0.95);
 }
 
-/* === DEVELOPMENT BUTTONS === */
-.dev-button-container {
-    position: absolute;
-    top: calc(30px * var(--window-scale, 1));
-    right: calc(30px * var(--window-scale, 1));
-    z-index: 1000;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    gap: calc(9px * var(--window-scale, 1));
-    max-height: calc(500px * var(--window-scale, 1)); /* Limit height */
-    overflow-y: auto; /* Scroll if needed */
-    background: rgba(0, 0, 0, 0.8);
-    padding: calc(15px * var(--window-scale, 1));
-    border-radius: calc(12px * var(--window-scale, 1));
-    max-width: calc(400px * var(--window-scale, 1)); /* Limit width */
-    cursor: move; /* Show drag cursor */
-    user-select: none; /* Prevent text selection while dragging */
-}
 
-/* Drag handle area at the top of dev container */
-.dev-button-container::before {
-    content: "⋮⋮⋮ DEV PANEL ⋮⋮⋮";
-    display: block;
-    text-align: center;
-    color: #fff;
-    font-size: calc(14px * var(--window-scale, 1));
-    font-weight: bold;
-    padding: calc(8px * var(--window-scale, 1)) 0;
-    margin-bottom: calc(8px * var(--window-scale, 1));
-    border-bottom: calc(0.2vw * var(--window-scale, 1)) solid rgba(255, 255, 255, 0.3);
-    cursor: move;
-}
-
-.dev-button {
-    background: #ff6b6b;
-    color: white;
-    border: calc(0.3vw * var(--window-scale, 1)) solid #ff4757;
-    padding: calc(6px * var(--window-scale, 1)) calc(10px * var(--window-scale, 1));
-    font-size: calc(12px * var(--window-scale, 1));
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: calc(6px * var(--window-scale, 1));
-    transition: all 0.2s ease;
-    white-space: nowrap;
-    text-align: center;
-}
-
-.dev-button:hover {
-    background: #ff4757;
-    transform: scale(1.05);
-}
-
-.dev-button:active {
-    transform: scale(0.95);
-}
-
-.dev-button.active {
-    background: #51cf66;
-    border-color: #40c057;
-}
-
-.dev-button.active:hover {
-    background: #40c057;
-}
 
 /* === STATUS BAR === */
 .status-bar {
@@ -920,15 +854,10 @@ body {
 
 /* Ensure desktop elements are visible on desktop */
 @media (min-width: 769px) {
-    .desktop-icons,
-    .dev-button-container {
+    .desktop-icons {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
-    }
-    
-    .dev-button-container {
-        display: grid !important; /* Keep original grid layout */
     }
 }
 

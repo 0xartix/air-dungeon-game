@@ -381,8 +381,7 @@ class WindowsUIManager {
         // Setup play button functionality
         this.setupPlayButton();
         
-        // Setup development button
-        this.setupDevButton();
+
     }
     
     /**
@@ -960,7 +959,7 @@ class WindowsUIManager {
         
         // Update current scene and dev buttons
         this.currentScene = sceneName;
-        this.updateDevButtons();
+
         
         // Adjust window aspect ratio for mobile based on scene image
         this.adjustWindowAspectRatio(scene);
@@ -1826,24 +1825,7 @@ class WindowsUIManager {
         }
     }
     
-    /**
-     * Update dev buttons to show current scene
-     */
-    updateDevButtons() {
-        // Remove active class from all dev buttons
-        const devButtons = document.querySelectorAll('.dev-button');
-        devButtons.forEach(button => {
-            button.classList.remove('active');
-        });
-        
-        // Add active class to current scene button
-        if (this.currentScene) {
-            const currentSceneButton = document.querySelector(`[data-scene="${this.currentScene}"]`);
-            if (currentSceneButton) {
-                currentSceneButton.classList.add('active');
-            }
-        }
-    }
+
 
     /**
      * Play click sound
@@ -1937,12 +1919,8 @@ class WindowsUIManager {
         });
     }
 
-    /**
-     * Setup development buttons for direct scene access
-     */
-    setupDevButton() {
-        // Add retro dialog test button
-        const testRetroDialog = document.getElementById('testRetroDialog');
+
+
         if (testRetroDialog) {
             testRetroDialog.addEventListener('click', () => {
                 const retroDialog = document.getElementById('retroDialog');
@@ -2138,13 +2116,7 @@ class WindowsUIManager {
 
         // Game Over button
         const devGameOverButton = document.getElementById('devGameOverButton');
-        if (devGameOverButton) {
-            devGameOverButton.addEventListener('click', () => {
-                this.openGameWindow();
-                this.showGameScene('gameOver');
-            });
-        }
-    }
+
     
     /**
      * Reset game to scene1 with default stats
